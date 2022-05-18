@@ -260,3 +260,38 @@ const lines = input.split('\n');
 // }
 
 //1041 - Coordenadas de um Ponto
+// const [x, y] = lines
+//   .shift()
+//   .split(' ')
+//   .map(item => Number(item));
+// if (x === 0.0 && y === 0.0) {
+//   console.log('Origem');
+// } else if (x === 0.0 && y !== 0.0) {
+//   console.log('Eixo Y');
+// } else if (y === 0.0 && x !== 0.0) {
+//   console.log('Eixo X');
+// } else if (x > 0 && y > 0) {
+//   console.log('Q1');
+// } else if (x < 0 && y > 0) {
+//   console.log('Q2');
+// } else if (x < 0 && y < 0) {
+//   console.log('Q3');
+// } else if (x > 0 && y < 0) {
+//   console.log('Q4');
+// }
+
+// 1047 - Tempo de Jogo com Minutos
+const [hInic, minInic, hFinal, minFinal] = lines
+  .shift()
+  .split(' ')
+  .map(item => item);
+let horasJogadas = Math.abs(hFinal - hInic);
+let minJogados = minFinal - minInic;
+if (hInic === hFinal && minInic === minFinal) {
+  console.log(`O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)`);
+} else if (minFinal > minInic) {
+  minJogados = 60 - (minInic - minFinal);
+  console.log(`O JOGO DUROU ${horasJogadas} HORA(S) E ${minJogados} MINUTO(S)`);
+} else {
+  console.log(`O JOGO DUROU ${horasJogadas} HORA(S) E ${minJogados} MINUTO(S)`);
+}
