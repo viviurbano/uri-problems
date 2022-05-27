@@ -1,3 +1,4 @@
+const { type } = require('os');
 const { createHistogram } = require('perf_hooks');
 
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
@@ -280,18 +281,199 @@ const lines = input.split('\n');
 //   console.log('Q4');
 // }
 
+////////////////// AINDA NÃO SUBMETIDO - ERRO
 // 1047 - Tempo de Jogo com Minutos
-const [hInic, minInic, hFinal, minFinal] = lines
-  .shift()
-  .split(' ')
-  .map(item => item);
-let horasJogadas = Math.abs(hFinal - hInic);
-let minJogados = minFinal - minInic;
-if (hInic === hFinal && minInic === minFinal) {
-  console.log(`O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)`);
-} else if (minFinal > minInic) {
-  minJogados = 60 - (minInic - minFinal);
-  console.log(`O JOGO DUROU ${horasJogadas} HORA(S) E ${minJogados} MINUTO(S)`);
-} else {
-  console.log(`O JOGO DUROU ${horasJogadas} HORA(S) E ${minJogados} MINUTO(S)`);
-}
+// const [horaInicial, minutoInicial, horaFinal, minutoFinal] = lines
+//   .shift()
+//   .split(' ')
+//   .map(item => item);
+// const horasJogadas = horaFinal - horaInicial;
+// console.log(horasJogadas);
+// const minJogados = Math.abs(minutoInicial - minutoFinal);
+// console.log(minJogados);
+
+// 1048 - Aumento de Salário
+// const salAtual = lines
+//   .shift()
+//   .split(' ')
+//   .map(item => Number(item));
+// const msg = function (sal, percentual) {
+//   const novoSal = Number(salAtual * percentual) + Number(salAtual);
+//   console.log(`Novo salario: ${novoSal.toFixed(2)}`);
+//   console.log(`Reajuste ganho: ${(salAtual * percentual).toFixed(2)}`);
+//   console.log(`Em percentual: ${(percentual * 100).toFixed(0)} %`);
+// };
+// if (salAtual >= 0 && salAtual <= 400) {
+//   msg(salAtual, 0.15);
+// } else if (salAtual >= 400.01 && salAtual <= 800.0) {
+//   msg(salAtual, 0.12);
+// } else if (salAtual >= 800.01 && salAtual <= 1200.0) {
+//   msg(salAtual, 0.1);
+// } else if (salAtual >= 1200.01 && salAtual <= 2000.0) {
+//   msg(salAtual, 0.07);
+// } else if (salAtual > 2000.0) {
+//   msg(salAtual, 0.04);
+// }
+
+// 1049 - Animal
+// const a = lines.shift();
+// const b = lines.shift();
+// const c = lines.shift();
+// if (a === 'vertebrado' && b === 'ave') {
+//   if (c === 'carnivoro') {
+//     console.log('aguia');
+//   } else {
+//     console.log('pomba');
+//   }
+// }
+// if (a === 'vertebrado' && b === 'mamifero') {
+//   if (c === 'onivoro') {
+//     console.log('homem');
+//   } else {
+//     console.log('vaca');
+//   }
+// }
+// if (a === 'invertebrado' && b === 'inseto') {
+//   if (c === 'hematofago') {
+//     console.log('pulga');
+//   } else {
+//     console.log('lagarta');
+//   }
+// }
+// if (a === 'invertebrado' && b === 'anelideo') {
+//   if (c === 'hematofago') {
+//     console.log('sanguessuga');
+//   } else {
+//     console.log('minhoca');
+//   }
+// }
+
+// 1050 - DDD
+// const ddd = lines.shift();
+// switch (ddd) {
+//   case '61':
+//     console.log('Brasilia');
+//     break;
+//   case '71':
+//     console.log('Salvador');
+//     break;
+//   case '11':
+//     console.log('Sao Paulo');
+//     break;
+//   case '21':
+//     console.log('Rio de Janeiro');
+//     break;
+//   case '32':
+//     console.log('Juiz de Fora');
+//     break;
+//   case '19':
+//     console.log('Campinas');
+//     break;
+//   case '27':
+//     console.log('Vitoria');
+//     break;
+//   case '31':
+//     console.log('Belo Horizonte');
+//     break;
+//   default:
+//     console.log(`DDD nao cadastrado`);
+// }
+
+// 1051 - Imposto de Renda
+// const renda = lines
+//   .shift()
+//   .split(' ')
+//   .map(el => Number(el));
+
+// const calcImposto = function (renda) {
+//   const valorIsento = 2000.0;
+//   if (renda >= 0 && renda <= 2000.0) {
+//     console.log('Isento');
+//   } else if (renda >= 2000.01 && renda <= 3000.0) {
+//     const faixaUm = renda - 2000.0;
+//     console.log(`R$ ${(faixaUm * 0.08).toFixed(2)}`);
+//   } else if (renda >= 3000.01 && renda < 4500.0) {
+//     const faixaUm = 1000.0;
+//     const tribUm = (1000.0 * 0.08).toFixed(2);
+//     const faixaDois = renda - 3000.0;
+//     const tribDois = faixaDois * 0.18;
+//     const imposto = Number(tribUm) + Number(tribDois);
+//     console.log(`R$ ${imposto.toFixed(2)}`);
+//   } else if (renda >= 4500.0) {
+//     const faixaUm = 1000.0;
+//     const tribUm = (1000.0 * 0.08).toFixed(2);
+//     const faixaDois = 1500.0;
+//     const tribDois = (faixaDois * 0.18).toFixed(2);
+//     const faixaTres = renda - 4500;
+//     const tribTres = (faixaTres * 0.28).toFixed(2);
+//     const imposto = Number(tribUm) + Number(tribDois) + Number(tribTres);
+//     console.log(`R$ ${imposto.toFixed(2)}`);
+//   }
+// };
+// calcImposto(renda);
+
+// 1052 - Mês
+// const mes = lines.shift();
+// switch (mes) {
+//   case '1':
+//     console.log('January');
+//     break;
+//   case '2':
+//     console.log('February');
+//     break;
+//   case '3':
+//     console.log('March');
+//     break;
+//   case '4':
+//     console.log('April');
+//     break;
+//   case '5':
+//     console.log('May');
+//     break;
+//   case '6':
+//     console.log('June');
+//     break;
+//   case '7':
+//     console.log('July');
+//     break;
+//   case '8':
+//     console.log('August');
+//     break;
+//   case '9':
+//     console.log('September');
+//     break;
+//   case '10':
+//     console.log('October');
+//     break;
+//   case '11':
+//     console.log('November');
+//     break;
+//   case '12':
+//     console.log('December');
+//     break;
+// }
+
+// 1059 - Números Pares
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i);
+//   }
+// }
+
+// 1060 - Números Positivos
+// const a = lines.shift().split(' ');
+// const b = lines.shift().split(' ');
+// const c = lines.shift().split(' ');
+// const d = lines.shift().split(' ');
+// const e = lines.shift().split(' ');
+// const f = lines.shift().split(' ');
+// const numeros = [...a, ...b, ...c, ...d, ...e, ...f];
+// let contador = 0;
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] > 0) {
+//     contador++;
+//   }
+// }
+// console.log(`${contador} valores positivos`);
+
+// 1061 - Tempo de um Evento
