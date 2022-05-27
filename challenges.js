@@ -477,3 +477,65 @@ const lines = input.split('\n');
 // console.log(`${contador} valores positivos`);
 
 // 1061 - Tempo de um Evento
+
+// 1064 - Positivos e Média
+// const a = lines.shift().split(' ');
+// const b = lines.shift().split(' ');
+// const c = lines.shift().split(' ');
+// const d = lines.shift().split(' ');
+// const e = lines.shift().split(' ');
+// const f = lines.shift().split(' ');
+// const numeros = [...a, ...b, ...c, ...d, ...e, ...f];
+// let contador = 0;
+// let acc = 0;
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] > 0) {
+//     contador++;
+//     acc = Number(acc) + Number(numeros[i]);
+//   }
+// }
+// console.log(`${contador} valores positivos`);
+// console.log((acc / contador).toFixed(1));
+
+// // 1065 - Pares entre Cinco Números
+// const a = lines.shift().split(' ');
+// const b = lines.shift().split(' ');
+// const c = lines.shift().split(' ');
+// const d = lines.shift().split(' ');
+// const e = lines.shift().split(' ');
+// const numeros = [...a, ...b, ...c, ...d, ...e];
+// let contador = 0;
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] % 2 === 0) {
+//     contador++;
+//   }
+// }
+// console.log(`${contador} valores pares`);
+
+// 1066 - Pares, Ímpares, Positivos e Negativos
+const a = lines.shift().split(' ');
+const b = lines.shift().split(' ');
+const c = lines.shift().split(' ');
+const d = lines.shift().split(' ');
+const e = lines.shift().split(' ');
+const numeros = [...a, ...b, ...c, ...d, ...e];
+let contPar = 0;
+let contImpar = 0;
+let contPositivo = 0;
+let contNegativo = 0;
+for (let i = 0; i < numeros.length; i++) {
+  if (numeros[i] % 2 === 0) {
+    contPar++;
+  } else {
+    contImpar++;
+  }
+  if (numeros[i] > 0) {
+    contPositivo++;
+  } else if (numeros[i] < 0) {
+    contNegativo++;
+  }
+}
+console.log(`${contPar} valor(es) par(es)`);
+console.log(`${contImpar} valor(es) impar(es)`);
+console.log(`${contPositivo} valor(es) positivo(s)`);
+console.log(`${contNegativo} valor(es) negativo(s)`);
