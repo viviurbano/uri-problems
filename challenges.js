@@ -610,3 +610,16 @@ const lines = input.split('\n');
 // for (let i = 1; i <= 10; i++) {
 //   console.log(`${i} x ${n} = ${i * n}`);
 // }
+
+// 1142 - PUM - 5% de erro ainda
+// let n = lines.shift();
+// let msg = [];
+// for (let i = 1; i <= n * 4; i++) {
+//   if (i % 4 !== 0) {
+//     msg.push(i);
+//   } else msg.push('PUM');
+// }
+// for (let i = 0; i < n; i++) {
+//   console.log('', ...msg.splice(0, 4));
+//   console.log(...msg.splice(0, 4));
+// }
