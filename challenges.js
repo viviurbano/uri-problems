@@ -1,5 +1,7 @@
-const { type } = require('os');
-const { createHistogram } = require('perf_hooks');
+// const { type } = require('os');
+// const { createHistogram } = require('perf_hooks');
+
+const { CLIENT_RENEG_LIMIT } = require('tls');
 
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
 const lines = input.split('\n');
@@ -513,29 +515,84 @@ const lines = input.split('\n');
 // console.log(`${contador} valores pares`);
 
 // 1066 - Pares, Ímpares, Positivos e Negativos
-const a = lines.shift().split(' ');
-const b = lines.shift().split(' ');
-const c = lines.shift().split(' ');
-const d = lines.shift().split(' ');
-const e = lines.shift().split(' ');
-const numeros = [...a, ...b, ...c, ...d, ...e];
-let contPar = 0;
-let contImpar = 0;
-let contPositivo = 0;
-let contNegativo = 0;
-for (let i = 0; i < numeros.length; i++) {
-  if (numeros[i] % 2 === 0) {
-    contPar++;
-  } else {
-    contImpar++;
+// const a = lines.shift().split(' ');
+// const b = lines.shift().split(' ');
+// const c = lines.shift().split(' ');
+// const d = lines.shift().split(' ');
+// const e = lines.shift().split(' ');
+// const numeros = [...a, ...b, ...c, ...d, ...e];
+// let contPar = 0;
+// let contImpar = 0;
+// let contPositivo = 0;
+// let contNegativo = 0;
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] % 2 === 0) {
+//     contPar++;
+//   } else {
+//     contImpar++;
+//   }
+//   if (numeros[i] > 0) {
+//     contPositivo++;
+//   } else if (numeros[i] < 0) {
+//     contNegativo++;
+//   }
+// }
+// console.log(`${contPar} valor(es) par(es)`);
+// console.log(`${contImpar} valor(es) impar(es)`);
+// console.log(`${contPositivo} valor(es) positivo(s)`);
+// console.log(`${contNegativo} valor(es) negativo(s)`);
+
+// 1067 - Números Ímpares
+// const numLimite = lines.shift();
+// for (let i = 0; i <= numLimite; i++) {
+//   if (i % 2 !== 0) {
+//     console.log(i);
+//   }
+// }
+
+// 1070 - Seis Números Ímpares
+// let numero = lines.shift();
+// for (let i = 0; i < 12; i++) {
+//   if (numero % 2 !== 0) {
+//     console.log(numero);
+//   }
+//   numero = Number(numero) + 1;
+// }
+
+// 1071 - Soma de Impares Consecutivos I
+
+// 1072 - Intervalo 2
+// let n = lines.shift();
+// let cont = 0;
+// lines.forEach(el => {
+//   if (el >= 10 && el <= 20) {
+//     cont++;
+//   }
+// });
+// console.log(`${cont} in`);
+
+// 1073 - Quadrado de Pares
+// const n = lines.shift();
+// for (let i = 1; i <= n; i++) {
+//   if (i % 2 === 0) {
+//     console.log(`${i}^2 = ${i * i}`);
+//   }
+// }
+
+// 1074 - Par ou Ímpar
+const n = lines.shift();
+lines.forEach(el => {
+  let msg = '';
+  const newNum = Number(el);
+  if (newNum === 0) msg = 'NULL';
+  else {
+    if (newNum % 2 === 0) {
+      msg += 'EVEN ';
+    } else msg += 'ODD ';
+
+    if (newNum > 0) {
+      msg += 'POSITIVE';
+    } else msg += 'NEGATIVE';
   }
-  if (numeros[i] > 0) {
-    contPositivo++;
-  } else if (numeros[i] < 0) {
-    contNegativo++;
-  }
-}
-console.log(`${contPar} valor(es) par(es)`);
-console.log(`${contImpar} valor(es) impar(es)`);
-console.log(`${contPositivo} valor(es) positivo(s)`);
-console.log(`${contNegativo} valor(es) negativo(s)`);
+  console.log(msg);
+});
