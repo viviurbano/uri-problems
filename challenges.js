@@ -580,19 +580,33 @@ const lines = input.split('\n');
 // }
 
 // 1074 - Par ou Ímpar
-const n = lines.shift();
-lines.forEach(el => {
-  let msg = '';
-  const newNum = Number(el);
-  if (newNum === 0) msg = 'NULL';
-  else {
-    if (newNum % 2 === 0) {
-      msg += 'EVEN ';
-    } else msg += 'ODD ';
+// const n = lines.shift();
+// lines.forEach(el => {
+//   let msg = '';
+//   const newNum = Number(el);
+//   if (newNum === 0) msg = 'NULL';
+//   else {
+//     if (newNum % 2 === 0) {
+//       msg += 'EVEN ';
+//     } else msg += 'ODD ';
 
-    if (newNum > 0) {
-      msg += 'POSITIVE';
-    } else msg += 'NEGATIVE';
-  }
-  console.log(msg);
-});
+//     if (newNum > 0) {
+//       msg += 'POSITIVE';
+//     } else msg += 'NEGATIVE';
+//   }
+//   console.log(msg);
+// });
+
+// 1075 - Resto 2
+// const n = lines.shift();
+// for (let i = 0; i < 10000; i++) {
+//   if (i % n === 2) {
+//     console.log(i);
+//   }
+// }
+
+// 1078 - Tabuada
+// const n = lines.shift();
+// for (let i = 1; i <= 10; i++) {
+//   console.log(`${i} x ${n} = ${i * n}`);
+// }
