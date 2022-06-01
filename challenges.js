@@ -560,6 +560,17 @@ const lines = input.split('\n');
 // }
 
 // 1071 - Soma de Impares Consecutivos I
+// let x = lines.shift();
+// let y = lines.shift();
+// let soma = 0;
+
+// for (let i = 0; i < x - y; i++) {
+//   x -= 1;
+//   if (x % 2 !== 0) {
+//     soma += Number(x);
+//   }
+// }
+// console.log(soma);
 
 // 1072 - Intervalo 2
 // let n = lines.shift();
@@ -580,22 +591,22 @@ const lines = input.split('\n');
 // }
 
 // 1074 - Par ou Ímpar
-// const n = lines.shift();
-// lines.forEach(el => {
-//   let msg = '';
-//   const newNum = Number(el);
-//   if (newNum === 0) msg = 'NULL';
-//   else {
-//     if (newNum % 2 === 0) {
-//       msg += 'EVEN ';
-//     } else msg += 'ODD ';
+const n = lines.shift();
+lines.forEach(el => {
+  let msg = '';
+  const newNum = Number(el);
+  if (newNum === 0) msg = 'NULL';
+  else {
+    if (newNum % 2 === 0) {
+      msg += 'EVEN ';
+    } else msg += 'ODD ';
 
-//     if (newNum > 0) {
-//       msg += 'POSITIVE';
-//     } else msg += 'NEGATIVE';
-//   }
-//   console.log(msg);
-// });
+    if (newNum > 0) {
+      msg += 'POSITIVE';
+    } else msg += 'NEGATIVE';
+  }
+  console.log(msg);
+});
 
 // 1075 - Resto 2
 // const n = lines.shift();
