@@ -1,6 +1,7 @@
 // const { type } = require('os');
 // const { createHistogram } = require('perf_hooks');
 
+const { arrayBuffer } = require('stream/consumers');
 const { CLIENT_RENEG_LIMIT } = require('tls');
 
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
@@ -591,22 +592,22 @@ const lines = input.split('\n');
 // }
 
 // 1074 - Par ou Ímpar
-const n = lines.shift();
-lines.forEach(el => {
-  let msg = '';
-  const newNum = Number(el);
-  if (newNum === 0) msg = 'NULL';
-  else {
-    if (newNum % 2 === 0) {
-      msg += 'EVEN ';
-    } else msg += 'ODD ';
+// const n = lines.shift();
+// lines.forEach(el => {
+//   let msg = '';
+//   const newNum = Number(el);
+//   if (newNum === 0) msg = 'NULL';
+//   else {
+//     if (newNum % 2 === 0) {
+//       msg += 'EVEN ';
+//     } else msg += 'ODD ';
 
-    if (newNum > 0) {
-      msg += 'POSITIVE';
-    } else msg += 'NEGATIVE';
-  }
-  console.log(msg);
-});
+//     if (newNum > 0) {
+//       msg += 'POSITIVE';
+//     } else msg += 'NEGATIVE';
+//   }
+//   console.log(msg);
+// });
 
 // 1075 - Resto 2
 // const n = lines.shift();
@@ -634,3 +635,34 @@ lines.forEach(el => {
 //   console.log('', ...msg.splice(0, 4));
 //   console.log(...msg.splice(0, 4));
 // }
+
+// HackerRank
+//Staircase
+// function staircase(n) {
+//   let spaces = '-';
+//   let velha = '#';
+//   for (let i = n, x = 1; i >= 0; i--, x++) {
+//     console.log(spaces.repeat(i) + velha.repeat(x));
+//   }
+// }
+// staircase(6);
+
+// miniMaxSum
+// function miniMaxSum(arr) {
+//   let max = Math.max(...arr);
+//   let min = Math.min(...arr);
+//   let sum = arr.reduce(
+//     (previousValue, currentValue) => previousValue + currentValue,
+//     0
+//   );
+//   return [sum - max, sum - min];
+// }
+// let arr = [1, 3, 5, 7, 9];
+// console.log(miniMaxSum(arr));
+
+// birthday-cake-candles
+function birthdayCakeCandles(candles) {
+  let tallest = Math.max(...candles);
+  let cont = candles.filter(el => el === tallest);
+  return cont.length;
+}
