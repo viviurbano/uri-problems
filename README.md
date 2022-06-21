@@ -1,3 +1,3 @@
-# uri-problems
+# Beecrowd and HackerRank
 
-solving problems from URI Judge Online
+Solving problems from Beecrowd (before known as URI Judge Online) and HackerRank
