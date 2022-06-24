@@ -636,7 +636,9 @@ const lines = input.split('\n');
 //   console.log(...msg.splice(0, 4));
 // }
 
-// HackerRank
+// ============================== HackerRank ==============================
+// ============================== HackerRank ==============================
+
 //Staircase
 // function staircase(n) {
 //   let spaces = '-';
@@ -661,8 +663,33 @@ const lines = input.split('\n');
 // console.log(miniMaxSum(arr));
 
 // birthday-cake-candles
-function birthdayCakeCandles(candles) {
-  let tallest = Math.max(...candles);
-  let cont = candles.filter(el => el === tallest);
-  return cont.length;
-}
+// function birthdayCakeCandles(candles) {
+//   let tallest = Math.max(...candles);
+//   let cont = candles.filter(el => el === tallest);
+//   return cont.length;
+// }
+
+//time-conversion
+// function timeConversion(s) {
+//   const amPm = s.slice(-2);
+//   let hour = Number(s.slice(0, 2));
+//   let minute = s.slice(3, 5);
+//   let seconds = s.slice(6, 8);
+//   if (amPm === 'AM')
+//     if (hour >= 1 && hour <= 11) {
+//       return s.slice(0, 8);
+//     } else if (hour === 12) {
+//       let convertedTime = ['00', minute, seconds];
+//       return convertedTime.join(':');
+//     }
+
+//   if (amPm === 'PM') {
+//     if (hour >= 1 && hour <= 11) {
+//       let convertedTime = [hour + 12, minute, seconds];
+//       return convertedTime.join(':');
+//     } else if (hour === 12) {
+//       return s.slice(0, 8);
+//     }
+//   }
+// }
+// console.log(timeConversion('00:00:00AM'));
