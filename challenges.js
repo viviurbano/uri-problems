@@ -706,3 +706,19 @@ const lines = input.split('\n');
 // }
 // const grades = [73, 67, 38, 33];
 // console.log(gradingStudents(grades));
+
+// kangaroo
+function kangaroo(x1, v1, x2, v2) {
+  for (let i = 0; i < 1000000; i++) {
+    if ((x1 > x2 && v1 > v2) || (x2 > x1 && v2 > v1)) {
+      return 'NO';
+    }
+    if ((x1 + i) * v1 === (x2 + i) * v2) {
+      return 'YES';
+    }
+  }
+}
+// console.log(kangaroo(0, 3, 4, 2)); // YES
+// console.log(kangaroo(0, 2, 5, 3)); // NO
+// console.log(kangaroo(1113, 612, 1331, 610)); // YES
+// console.log(kangaroo(21, 6, 47, 3)); // NO
