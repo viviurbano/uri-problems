@@ -1,6 +1,7 @@
 // const { type } = require('os');
 // const { createHistogram } = require('perf_hooks');
 
+const { AsyncLocalStorage } = require('async_hooks');
 const { arrayBuffer } = require('stream/consumers');
 const { CLIENT_RENEG_LIMIT } = require('tls');
 
@@ -708,17 +709,37 @@ const lines = input.split('\n');
 // console.log(gradingStudents(grades));
 
 // kangaroo
-function kangaroo(x1, v1, x2, v2) {
-  for (let i = 0; i < 1000000; i++) {
-    if ((x1 > x2 && v1 > v2) || (x2 > x1 && v2 > v1)) {
-      return 'NO';
-    }
-    if ((x1 + i) * v1 === (x2 + i) * v2) {
-      return 'YES';
-    }
-  }
-}
+// function kangaroo(x1, v1, x2, v2) {
+//   if ((x1 > x2 && v1 > v2) || (x2 > x1 && v2 > v1)) {
+//     return 'NO';
+//   }
+//   if ((x1 - x2) % (v2 - v1) === 0) {
+//     return 'YES';
+//   } else return 'NO';
+// }
 // console.log(kangaroo(0, 3, 4, 2)); // YES
 // console.log(kangaroo(0, 2, 5, 3)); // NO
 // console.log(kangaroo(1113, 612, 1331, 610)); // YES
 // console.log(kangaroo(21, 6, 47, 3)); // NO
+
+// breakingRecords
+// function breakingRecords(scores) {
+//   let contMin = 0;
+//   let contMax = 0;
+//   let min = scores[0];
+//   let max = scores[0];
+
+//   for (let i = 0; i < scores.length; i++) {
+//     if (scores[i] < min) {
+//       min = scores[i];
+//       contMin++;
+//     }
+//     if (scores[i] > max) {
+//       max = scores[i];
+//       contMax++;
+//     }
+//   }
+//   return [contMax, contMin];
+// }
+// console.log(breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]));
+// console.log(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]));
