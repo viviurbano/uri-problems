@@ -564,12 +564,12 @@ const lines = input.split('\n');
 // 1071 - Soma de Impares Consecutivos I
 // let x = lines.shift();
 // let y = lines.shift();
+// let start = Math.min(...[x, y]);
+// let end = Math.max(...[x, y]);
 // let soma = 0;
-
-// for (let i = 0; i < x - y; i++) {
-//   x -= 1;
-//   if (x % 2 !== 0) {
-//     soma += Number(x);
+// for (let i = start + 1; i < end; i++) {
+//   if (i % 2 !== 0) {
+//     soma = soma + i;
 //   }
 // }
 // console.log(soma);
@@ -625,17 +625,16 @@ const lines = input.split('\n');
 // }
 
 // 1142 - PUM - 5% de erro ainda
-// let n = lines.shift();
-// let msg = [];
-// for (let i = 1; i <= n * 4; i++) {
-//   if (i % 4 !== 0) {
-//     msg.push(i);
-//   } else msg.push('PUM');
-// }
-// for (let i = 0; i < n; i++) {
-//   console.log('', ...msg.splice(0, 4));
-//   console.log(...msg.splice(0, 4));
-// }
+let n = lines.shift();
+let msg = [];
+for (let i = 1; i <= n * 4; i++) {
+  if (i % 4 !== 0) {
+    msg.push(i);
+  } else msg.push('PUM');
+}
+for (let i = 0; i < n; i++) {
+  console.log(...msg.splice(0, 4));
+}
 
 // ============================== HackerRank ==============================
 // ============================== HackerRank ==============================
@@ -743,3 +742,38 @@ const lines = input.split('\n');
 // }
 // console.log(breakingRecords([10, 5, 20, 20, 4, 5, 2, 25, 1]));
 // console.log(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]));
+
+//the-birthday-bar
+
+// function birthday(s, d, m) {
+//   let cont = 0;
+//   for (let i = 0; i < s.length; i++) {
+//     if (s.length <= 2) {
+//       cont = 1;
+//       return cont;
+//     }
+//     if (s[i] + s[i + 1] === d) {
+//       cont++;
+//       console.log('aqui');
+//     }
+//   }
+//   return cont;
+// }
+
+// let s = [2, 2, 1, 3, 2];
+// let d = 3;
+// let m = 2;
+
+// let s = [1, 2, 1, 3, 2];
+// let d = 3
+// let m=  2
+
+// let s = [4, 1];
+// let d = 4;
+// let m = 1;
+
+let s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
+let d = 18;
+let m = 7;
+
+// console.log(birthday(s, d, m));
