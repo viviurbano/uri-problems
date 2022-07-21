@@ -625,16 +625,16 @@ const lines = input.split('\n');
 // }
 
 // 1142 - PUM - 5% de erro ainda
-let n = lines.shift();
-let msg = [];
-for (let i = 1; i <= n * 4; i++) {
-  if (i % 4 !== 0) {
-    msg.push(i);
-  } else msg.push('PUM');
-}
-for (let i = 0; i < n; i++) {
-  console.log(...msg.splice(0, 4));
-}
+// let n = lines.shift();
+// let msg = [];
+// for (let i = 1; i <= n * 4; i++) {
+//   if (i % 4 !== 0) {
+//     msg.push(i);
+//   } else msg.push('PUM');
+// }
+// for (let i = 0; i < n; i++) {
+//   console.log(...msg.splice(0, 4));
+// }
 
 // ============================== HackerRank ==============================
 // ============================== HackerRank ==============================
@@ -744,36 +744,30 @@ for (let i = 0; i < n; i++) {
 // console.log(breakingRecords([3, 4, 21, 36, 10, 28, 35, 5, 24, 42]));
 
 //the-birthday-bar
-
 // function birthday(s, d, m) {
-//   let cont = 0;
+//   let enableShare = 0;
 //   for (let i = 0; i < s.length; i++) {
-//     if (s.length <= 2) {
-//       cont = 1;
-//       return cont;
-//     }
-//     if (s[i] + s[i + 1] === d) {
-//       cont++;
-//       console.log('aqui');
+//     let newArr = s.slice(i, m + i);
+//     let sum = newArr.reduce(
+//       (previousValue, currentValue) => previousValue + currentValue,
+//       0
+//     );
+//     if (sum === d) {
+//       enableShare++;
 //     }
 //   }
-//   return cont;
+//   return enableShare;
 // }
 
-// let s = [2, 2, 1, 3, 2];
-// let d = 3;
-// let m = 2;
-
-// let s = [1, 2, 1, 3, 2];
-// let d = 3
-// let m=  2
-
-// let s = [4, 1];
-// let d = 4;
-// let m = 1;
-
-let s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
-let d = 18;
-let m = 7;
+// let s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
+// let d = 18;
+// let m = 7;
 
 // console.log(birthday(s, d, m));
+
+const mov = [2, 5, 1];
+const balance = mov.reduce((acc, currValue, index, arr) => {
+  return acc + currValue;
+}, 1);
+
+console.log(balance);
