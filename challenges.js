@@ -594,21 +594,22 @@ const lines = input.split('\n');
 
 // 1074 - Par ou Ímpar
 // const n = lines.shift();
-// lines.forEach(el => {
-//   let msg = '';
-//   const newNum = Number(el);
-//   if (newNum === 0) msg = 'NULL';
-//   else {
-//     if (newNum % 2 === 0) {
-//       msg += 'EVEN ';
-//     } else msg += 'ODD ';
 
-//     if (newNum > 0) {
-//       msg += 'POSITIVE';
-//     } else msg += 'NEGATIVE';
-//   }
-//   console.log(msg);
-// });
+lines.forEach(function (el) {
+  el = Number(el);
+  // console.log(el);
+  if (el === 0) {
+    console.log(`NULL\n`);
+  } else if (el % 2 === 0 && el > 0) {
+    console.log(`EVEN POSITIVE\n`);
+  } else if (el % 2 === 0 && el < 0) {
+    console.log(`EVEN NEGATIVE\n`);
+  } else if (el % 2 !== 0 && el > 0) {
+    console.log(`ODD POSITIVE\n`);
+  } else if (el % 2 !== 0 && el < 0) {
+    console.log(`ODD NEGATIVE\n`);
+  }
+});
 
 // 1075 - Resto 2
 // const n = lines.shift();
@@ -764,10 +765,9 @@ const lines = input.split('\n');
 // let m = 7;
 
 // console.log(birthday(s, d, m));
+// const mov = [2, 5, 1];
+// const balance = mov.reduce((acc, currValue, index, arr) => {
+//   return acc + currValue;
+// }, 1);
 
-const mov = [2, 5, 1];
-const balance = mov.reduce((acc, currValue, index, arr) => {
-  return acc + currValue;
-}, 1);
-
-console.log(balance);
+// console.log(balance);
