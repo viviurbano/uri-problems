@@ -144,7 +144,6 @@ const lines = input.split('\n');
 //   .split(' ')
 //   .map(item => Number(item));
 // console.log(`${valor}`);
-
 // const cedulas = [100, 50, 20, 10, 5, 2, 1];
 // for (let i = 0; i < cedulas.length; i++) {
 //   nota = Math.floor(valor / cedulas[i]);
@@ -285,7 +284,7 @@ const lines = input.split('\n');
 //   console.log('Q4');
 // }
 
-////////////////// AINDA NÃO SUBMETIDO - ERRO
+// ================================ AINDA NÃO SUBMETIDO - ERRO
 // 1047 - Tempo de Jogo com Minutos
 // const [horaInicial, minutoInicial, horaFinal, minutoFinal] = lines
 //   .shift()
@@ -388,7 +387,6 @@ const lines = input.split('\n');
 //   .shift()
 //   .split(' ')
 //   .map(el => Number(el));
-
 // const calcImposto = function (renda) {
 //   const valorIsento = 2000.0;
 //   if (renda >= 0 && renda <= 2000.0) {
@@ -480,8 +478,12 @@ const lines = input.split('\n');
 // }
 // console.log(`${contador} valores positivos`);
 
-// 1061 - Tempo de um Evento
+// let dias = lines
+//   .shift()
+//   .split()
+//   .map(item => Number(item));
 
+// 1061 - Tempo de um Evento
 // 1064 - Positivos e Média
 // const a = lines.shift().split(' ');
 // const b = lines.shift().split(' ');
@@ -592,24 +594,28 @@ const lines = input.split('\n');
 //   }
 // }
 
-// 1074 - Par ou Ímpar
+// 1074 - Par ou impar
 // const n = lines.shift();
-
-lines.forEach(function (el) {
-  el = Number(el);
-  // console.log(el);
-  if (el === 0) {
-    console.log(`NULL\n`);
-  } else if (el % 2 === 0 && el > 0) {
-    console.log(`EVEN POSITIVE\n`);
-  } else if (el % 2 === 0 && el < 0) {
-    console.log(`EVEN NEGATIVE\n`);
-  } else if (el % 2 !== 0 && el > 0) {
-    console.log(`ODD POSITIVE\n`);
-  } else if (el % 2 !== 0 && el < 0) {
-    console.log(`ODD NEGATIVE\n`);
-  }
-});
+// for (let v of lines) {
+//   let frase = null;
+//   v = Number(v);
+//   // console.log('aqui', typeof v, v);
+//   // console.log('true', !v === true);
+//   // console.log('false', !v === false);
+//   if (!v === true) {
+//     frase = 'NULL';
+//   }
+//   if (!v === false) {
+//     if (v % 2 === 0) {
+//       frase = 'EVEN';
+//     } else {
+//       frase = 'ODD';
+//     }
+//   }
+//   if (v > 0) frase += ' POSITIVE';
+//   if (v < 0) frase += ' NEGATIVE';
+//   console.log(frase);
+// }
 
 // 1075 - Resto 2
 // const n = lines.shift();
@@ -637,8 +643,18 @@ lines.forEach(function (el) {
 //   console.log(...msg.splice(0, 4));
 // }
 
+// 1079 - Médias Ponderadas
+// let[(n, line1, line2, line3)] = input.split('\n');
+// console.log(n, line1, line2, line3);
+
 // ============================== HackerRank ==============================
 // ============================== HackerRank ==============================
+
+// solveMeFirst
+// function solveMeFirst(a, b) {
+//   return a + b;
+// }
+// console.log(solveMeFirst(4, 5));
 
 //Staircase
 // function staircase(n) {
@@ -676,14 +692,12 @@ lines.forEach(function (el) {
 //   let hour = Number(s.slice(0, 2));
 //   let minute = s.slice(3, 5);
 //   let seconds = s.slice(6, 8);
-
 //   if (amPm === 'AM') {
 //     if (hour < 1 || hour > 11) {
 //       let convertedTime = ['00', minute, seconds];
 //       return convertedTime.join(':');
 //     }
 //   }
-
 //   if (amPm === 'PM') {
 //     if (hour >= 1 && hour <= 11) {
 //       let convertedTime = [hour + 12, minute, seconds];
@@ -694,8 +708,8 @@ lines.forEach(function (el) {
 // }
 // console.log(timeConversion('03:10:00PM'));
 
-//grading students
-// function gradingStudents(grades) {
+//grading s
+// function gradings(grades) {
 //   return grades.map(grade => {
 //     let nextMultiple = Math.floor(grade / 5) * 5 + 5;
 //     if (nextMultiple - grade < 3 && grade >= 38) {
@@ -706,7 +720,7 @@ lines.forEach(function (el) {
 //   });
 // }
 // const grades = [73, 67, 38, 33];
-// console.log(gradingStudents(grades));
+// console.log(gradings(grades));
 
 // kangaroo
 // function kangaroo(x1, v1, x2, v2) {
@@ -728,7 +742,6 @@ lines.forEach(function (el) {
 //   let contMax = 0;
 //   let min = scores[0];
 //   let max = scores[0];
-
 //   for (let i = 0; i < scores.length; i++) {
 //     if (scores[i] < min) {
 //       min = scores[i];
@@ -759,7 +772,6 @@ lines.forEach(function (el) {
 //   }
 //   return enableShare;
 // }
-
 // let s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1];
 // let d = 18;
 // let m = 7;
@@ -769,5 +781,32 @@ lines.forEach(function (el) {
 // const balance = mov.reduce((acc, currValue, index, arr) => {
 //   return acc + currValue;
 // }, 1);
-
 // console.log(balance);
+
+// between-two-sets ======================== NOT SOLVED YET
+
+// divisible-sum-pairs
+// const ar = [
+//   43, 95, 51, 55, 40, 86, 65, 81, 51, 20, 47, 50, 65, 53, 23, 78, 75, 75, 47,
+//   73, 25, 27, 14, 8, 26, 58, 95, 28, 3, 23, 48, 69, 26, 3, 73, 52, 34, 7, 40,
+//   33, 56, 98, 71, 29, 70, 71, 28, 12, 18, 49, 19, 25, 2, 18, 15, 41, 51, 42, 46,
+//   19, 98, 56, 54, 98, 72, 25, 16, 49, 34, 99, 48, 93, 64, 44, 50, 91, 44, 17,
+//   63, 27, 3, 65, 75, 19, 68, 30, 43, 37, 72, 54, 82, 92, 37, 52, 72, 62, 3, 88,
+//   82, 71,
+// ];
+// // Expected Output 216
+// const n = 100;
+// const k = 22;
+// function divisibleSumPairs(n, k, ar) {
+//   let pairs = 0;
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n; j++) {
+//       const sum = ar[i] + ar[j];
+//       if (i < j && sum % k === 0) {
+//         pairs++;
+//       }
+//     }
+//   }
+//   return pairs;
+// }
+// console.log(divisibleSumPairs(n, k, ar));
