@@ -2,8 +2,10 @@
 // const { createHistogram } = require('perf_hooks');
 
 const { AsyncLocalStorage } = require('async_hooks');
+const { count } = require('console');
 const { arrayBuffer } = require('stream/consumers');
 const { CLIENT_RENEG_LIMIT } = require('tls');
+const { brotliCompress } = require('zlib');
 
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
 const lines = input.split('\n');
@@ -810,3 +812,42 @@ const lines = input.split('\n');
 //   return pairs;
 // }
 // console.log(divisibleSumPairs(n, k, ar));
+
+// migratory - birds - VERSION 1;
+const arr = [1, 4, 4, 4, 5, 3, 5, 5];
+
+// function migratoryBirds(arr) {
+//   const result = arr.reduce(
+//     (acc, curValue) => {
+//       acc[curValue - 1]++;
+//       return acc;
+//     },
+//     [0, 0, 0, 0, 0]
+//   );
+//   const max = Math.max(...result);
+//   for (let i = 0; i < result.length; i++) {
+//     if (result[i] === max) {
+//       return i + 1;
+//     }
+//   }
+// }
+// console.log(migratoryBirds(arr));
+
+// migratory - birds - VERSION 2;
+// function migratoryBirds2(arr) {
+//   const result = arr.reduce(
+//     (acc, curValue) => {
+//       acc[curValue]++;
+//       return acc;
+//     },
+//     { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0 }
+//   );
+//   const max = Math.max(...Object.values(result));
+//   console.log(max);
+//   const teste = Object.keys(result).filter((el, i, arr) => {
+//     return result[el] === max;
+//   });
+//   // console.log(teste);
+//   return Number(teste[0]);
+// }
+// console.log(migratoryBirds2(arr));
