@@ -851,3 +851,19 @@ const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 //   return Number(teste[0]);
 // }
 // console.log(migratoryBirds2(arr));
+
+// Apple and Orange
+const s = 7;
+const t = 10;
+const a = 4;
+const b = 12;
+const apples = [2, 3, -4];
+const oranges = [3, -2, -4];
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  const calcApp = apples.map(el => el + a).filter(el => el >= s && el <= t);
+  const calcOran = oranges.map(el => el + b).filter(el => el >= s && el <= t);
+  console.log(calcApp.length);
+  console.log(calcOran.length);
+}
+countApplesAndOranges(s, t, a, b, apples, oranges);
