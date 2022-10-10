@@ -853,17 +853,67 @@ const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 // console.log(migratoryBirds2(arr));
 
 // Apple and Orange
-const s = 7;
-const t = 10;
-const a = 4;
-const b = 12;
-const apples = [2, 3, -4];
-const oranges = [3, -2, -4];
+// const s = 7;
+// const t = 10;
+// const a = 4;
+// const b = 12;
+// const apples = [2, 3, -4];
+// const oranges = [3, -2, -4];
 
-function countApplesAndOranges(s, t, a, b, apples, oranges) {
-  const calcApp = apples.map(el => el + a).filter(el => el >= s && el <= t);
-  const calcOran = oranges.map(el => el + b).filter(el => el >= s && el <= t);
-  console.log(calcApp.length);
-  console.log(calcOran.length);
-}
-countApplesAndOranges(s, t, a, b, apples, oranges);
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//   const calcApp = apples.map(el => el + a).filter(el => el >= s && el <= t);
+//   const calcOran = oranges.map(el => el + b).filter(el => el >= s && el <= t);
+//   console.log(calcApp.length);
+//   console.log(calcOran.length);
+// }
+// countApplesAndOranges(s, t, a, b, apples, oranges);
+
+// day-of-the-programmer
+
+// -----  2 CASOS NÃO PASSAM
+// function dayOfProgrammer(year) {
+//   const programerDay = 256;
+//   const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31];
+
+//   if (1700 <= year && year <= 2700) {
+//     const daysTotal = daysInMonths.reduce((acc, el) => acc + el);
+//     const whenInSept = Math.abs(daysTotal - programerDay);
+//     if (year === 1918) {
+//       return `${whenInSept + 13}.09.${year}`;
+//     }
+//     if (
+//       (year % 4 === 0 && year % 100 !== 0) ||
+//       year % 400 === 0 ||
+//       year === 1800
+//     ) {
+//       return `${whenInSept - 1}.09.${year}`;
+//     } else {
+//       return `${whenInSept}.09.${year}`;
+//     }
+//   }
+// }
+
+// function dayOfProgrammer(year) {
+//   const programerDay = 256;
+//   const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31];
+//   const daysTotal = daysInMonths.reduce((acc, el) => acc + el);
+//   const whenInSept = Math.abs(daysTotal - programerDay);
+//   //juliano =
+//   if (1700 <= year && year <= 1917) {
+//     if (year % 4 === 0) {
+//       return `${whenInSept - 1}.09.${year}`;
+//     }
+//   }
+//   //gregoriano
+//   if (1918 <= year && year <= 2700) {
+//     if (year === 1918) {
+//       return `${whenInSept + 13}.09.${year}`;
+//     }
+//     if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+//       return `${whenInSept - 1}.09.${year}`;
+//     }
+//   }
+
+//   return `${whenInSept}.09.${year}`;
+// }
+// console.log(dayOfProgrammer(1800));
