@@ -917,3 +917,18 @@ const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 //   return `${whenInSept}.09.${year}`;
 // }
 // console.log(dayOfProgrammer(1800));
+
+// bon-appetit
+// const bill = [3, 10, 2, 9];
+// const k = 1;
+// const b = 7;
+
+// function bonAppetit(bill, k, b) {
+//   const totalBill = bill.reduce((acc, el) => el + acc);
+//   const anaPayment = b - (totalBill - bill[k]) / 2;
+
+//   if (anaPayment === 0) {
+//     return console.log('Bon Appetit');
+//   } else console.log(anaPayment);
+// }
+// bonAppetit(bill, k, b);
