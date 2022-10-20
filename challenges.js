@@ -814,7 +814,7 @@ const lines = input.split('\n');
 // console.log(divisibleSumPairs(n, k, ar));
 
 // migratory - birds - VERSION 1;
-const arr = [1, 4, 4, 4, 5, 3, 5, 5];
+// const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 
 // function migratoryBirds(arr) {
 //   const result = arr.reduce(
@@ -869,30 +869,6 @@ const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 // countApplesAndOranges(s, t, a, b, apples, oranges);
 
 // day-of-the-programmer
-
-// -----  2 CASOS NÃO PASSAM
-// function dayOfProgrammer(year) {
-//   const programerDay = 256;
-//   const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31];
-
-//   if (1700 <= year && year <= 2700) {
-//     const daysTotal = daysInMonths.reduce((acc, el) => acc + el);
-//     const whenInSept = Math.abs(daysTotal - programerDay);
-//     if (year === 1918) {
-//       return `${whenInSept + 13}.09.${year}`;
-//     }
-//     if (
-//       (year % 4 === 0 && year % 100 !== 0) ||
-//       year % 400 === 0 ||
-//       year === 1800
-//     ) {
-//       return `${whenInSept - 1}.09.${year}`;
-//     } else {
-//       return `${whenInSept}.09.${year}`;
-//     }
-//   }
-// }
-
 // function dayOfProgrammer(year) {
 //   const programerDay = 256;
 //   const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31];
@@ -932,3 +908,22 @@ const arr = [1, 4, 4, 4, 5, 3, 5, 5];
 //   } else console.log(anaPayment);
 // }
 // bonAppetit(bill, k, b);
+
+// // sock-merchant
+// const n = 7;
+// const ar = [10, 10, 10, 10, 20, 20, 20, 20];
+// function sockMerchant(n, ar) {
+//   // array do set de meias
+//   const setSocks = [...new Set(ar)];
+//   let pairs = 0;
+//   for (let i = 0; i < setSocks.length; i++) {
+//     const socksByType = ar.filter(el => el === setSocks[i]);
+//     if (socksByType.length % 2 === 0) {
+//       pairs += socksByType.length / 2;
+//     } else {
+//       pairs += (socksByType.length - (socksByType.length % 2)) / 2;
+//     }
+//   }
+//   console.log(pairs);
+// }
+// sockMerchant(n, ar);
