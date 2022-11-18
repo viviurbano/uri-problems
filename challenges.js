@@ -911,7 +911,7 @@ const lines = input.split('\n');
 
 // // sock-merchant
 // const n = 7;
-// const ar = [10, 10, 10, 10, 20, 20, 20, 20];
+// const ar = [10, 10, 10, 20, 20, 20, 20];
 // function sockMerchant(n, ar) {
 //   // array do set de meias
 //   const setSocks = [...new Set(ar)];
@@ -927,3 +927,24 @@ const lines = input.split('\n');
 //   console.log(pairs);
 // }
 // sockMerchant(n, ar);
+
+const myObj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+
+// MODO 1 - retorna apenas o indice
+for (const key in myObj) {
+  console.log(key);
+}
+
+// MODO 2 - retorna o valor
+for (const value in myObj) {
+  console.log(myObj[value]);
+}
+
+// MODO 3 - mais custoso?
+for (const value of Object.values(myObj)) {
+  console.log(value);
+}
