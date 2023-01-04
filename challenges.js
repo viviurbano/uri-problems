@@ -928,23 +928,44 @@ const lines = input.split('\n');
 // }
 // sockMerchant(n, ar);
 
-const myObj = {
-  a: 1,
-  b: 2,
-  c: 3,
-};
+// // ---------------------- JS COMO ACESSAR OBJETOS
+// const myObj = {
+//   a: 1,
+//   b: 2,
+//   c: 3,
+//   4: 'teste',
+// };
 
-// MODO 1 - retorna apenas o indice
-for (const key in myObj) {
-  console.log(key);
-}
+// // MODO 1 - apenas o indice do objeto
+// for (const key in myObj) {
+//   console.log('key --', key);
+// }
+// // MODO 1 - apenas o valor
+// for (const value in myObj) {
+//   console.log('myObj[value] --', myObj[value]);
+// }
+// // MODO 2 - apenas o índice, acessando o objeto
+// for (const keys of Object.keys(myObj)) {
+//   console.log('keys --', keys);
+// }
+// // MODO 2 - apenas o valor, acessando o objeto
+// for (const values of Object.values(myObj)) {
+//   console.log('value --', values);
+// }
+// // MODO 2 - valor e objeto
+// for (const entries of Object.entries(myObj)) {
+//   console.log('entries --', entries);
+// }
 
-// MODO 2 - retorna o valor
-for (const value in myObj) {
-  console.log(myObj[value]);
-}
-
-// MODO 3 - mais custoso?
-for (const value of Object.values(myObj)) {
-  console.log(value);
+// between-two-sets
+const a = [2, 4];
+const b = [24, 48, 87];
+for (let i = 1; i < b.length; i++) {
+  // multiplos comuns
+  if (a.length >= 1) {
+    console.log('a[i]', a[i]);
+    if (a[i] * i === a[i + 1] * i) {
+      console.log('aqui', a[i] * i);
+    }
+  }
 }
