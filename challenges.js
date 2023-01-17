@@ -1,17 +1,13 @@
-// const { type } = require('os');
-// const { createHistogram } = require('perf_hooks');
-
-const { AsyncLocalStorage } = require('async_hooks');
-const { count } = require('console');
-const { arrayBuffer } = require('stream/consumers');
-const { CLIENT_RENEG_LIMIT } = require('tls');
-const { brotliCompress } = require('zlib');
-
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
 const lines = input.split('\n');
 
+// ============================== Beecrowd ==============================
+// ============================== Beecrowd ==============================
+
+/*
+
 // 1001 - Extremamente Básico
-// console.log('Hello World!');
+// console.log('Hello World, Vivi!');
 
 // 1002 - Área do Círculo
 // const a = Number(lines.shift());
@@ -649,6 +645,8 @@ const lines = input.split('\n');
 // let[(n, line1, line2, line3)] = input.split('\n');
 // console.log(n, line1, line2, line3);
 
+*/
+
 // ============================== HackerRank ==============================
 // ============================== HackerRank ==============================
 
@@ -956,16 +954,7 @@ const lines = input.split('\n');
 // for (const entries of Object.entries(myObj)) {
 //   console.log('entries --', entries);
 // }
-
-// between-two-sets
-const a = [2, 4];
-const b = [24, 48, 87];
-for (let i = 1; i < b.length; i++) {
-  // multiplos comuns
-  if (a.length >= 1) {
-    console.log('a[i]', a[i]);
-    if (a[i] * i === a[i + 1] * i) {
-      console.log('aqui', a[i] * i);
-    }
-  }
-}
+const amigos = ['Velma', 'Scooby'];
+amigos.push('Salsicha');
+amigos.unshift('Primeiro');
+console.log(amigos);
