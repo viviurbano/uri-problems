@@ -1,3 +1,5 @@
+const { PassThrough } = require('stream');
+
 const input = require('fs').readFileSync('dev/stdin', 'utf8');
 const lines = input.split('\n');
 
@@ -656,7 +658,7 @@ const lines = input.split('\n');
 // }
 // console.log(solveMeFirst(4, 5));
 
-//Staircase
+// Staircase
 // function staircase(n) {
 //   let spaces = '-';
 //   let velha = '#';
@@ -926,35 +928,25 @@ const lines = input.split('\n');
 // }
 // sockMerchant(n, ar);
 
-// // ---------------------- JS COMO ACESSAR OBJETOS
-// const myObj = {
-//   a: 1,
-//   b: 2,
-//   c: 3,
-//   4: 'teste',
-// };
+// counting-valleys
 
-// // MODO 1 - apenas o indice do objeto
-// for (const key in myObj) {
-//   console.log('key --', key);
+// let path = 'DDUUDDUDUUUD';
+// let path = 'DUDDUUUUDDD';
+// let path = 'DUDUDU';
+// let path = 'UDDDUDUU'; // atravessa só 1 vale
+// function countingValleys(steps, path) {
+//   let seaLevel = 0;
+//   let valleyCount = 0;
+//   let inValley = false;
+//   for (const el of path) {
+//     if (el === 'U') seaLevel++;
+//     else if (el === 'D') seaLevel--;
+
+//     if (inValley && seaLevel === 0) valleyCount++;
+//     if (seaLevel < 0)
+//       inValley = true; //reavalia se está ou não em um vale em toda iteração
+//     else inValley = false;
+//   }
+//   return valleyCount;
 // }
-// // MODO 1 - apenas o valor
-// for (const value in myObj) {
-//   console.log('myObj[value] --', myObj[value]);
-// }
-// // MODO 2 - apenas o índice, acessando o objeto
-// for (const keys of Object.keys(myObj)) {
-//   console.log('keys --', keys);
-// }
-// // MODO 2 - apenas o valor, acessando o objeto
-// for (const values of Object.values(myObj)) {
-//   console.log('value --', values);
-// }
-// // MODO 2 - valor e objeto
-// for (const entries of Object.entries(myObj)) {
-//   console.log('entries --', entries);
-// }
-const amigos = ['Velma', 'Scooby'];
-amigos.push('Salsicha');
-amigos.unshift('Primeiro');
-console.log(amigos);
+// console.log(countingValleys(steps, path));
