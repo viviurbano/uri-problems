@@ -929,7 +929,6 @@ const lines = input.split('\n');
 // sockMerchant(n, ar);
 
 // counting-valleys
-
 // let path = 'DDUUDDUDUUUD';
 // let path = 'DUDDUUUUDDD';
 // let path = 'DUDUDU';
@@ -950,3 +949,29 @@ const lines = input.split('\n');
 //   return valleyCount;
 // }
 // console.log(countingValleys(steps, path));
+
+// // drawing-book
+// function pageCount(n, p) {
+//   const fromTheEnd = Math.trunc(n / 2) - Math.trunc(p / 2);
+//   const fromBeginning = Math.trunc(p / 2);
+//   return fromBeginning < fromTheEnd ? fromBeginning : fromTheEnd;
+// }
+
+// console.log(pageCount(5, 4));
+
+// electronics-shop
+// function getMoneySpent(keyboards, drives, b) {
+//   const prices = [];
+//   for (let i = 0; i < keyboards.length; i++) {
+//     for (let j = 0; j < drives.length; j++) {
+//       if (keyboards[i] + drives[j] <= b) {
+//         prices.push(keyboards[i] + drives[j]);
+//       } else prices.push(-1);
+//     }
+//   }
+//   //ordena e muda o array
+//   prices.sort((a, b) => b - a);
+//   return prices[0];
+// }
+
+// console.log(getMoneySpent([20, 9], [1, 20, 1], 10));
