@@ -973,5 +973,25 @@ const lines = input.split('\n');
 //   prices.sort((a, b) => b - a);
 //   return prices[0];
 // }
-
 // console.log(getMoneySpent([20, 9], [1, 20, 1], 10));
+
+// cats-and-a-mouse
+
+function catAndMouse(x, y, z) {
+  const maior = Math.max(x, y, z);
+  for (let i = 0; i <= maior; i++) {
+    if (x > z) {
+      x--;
+    } else x++;
+
+    if (y > z) {
+      y--;
+    } else y++;
+
+    if (x === y) return 'Mouse C';
+    if (x === z) return 'Cat A';
+    if (y === z) return 'Cat B';
+  }
+}
+
+console.log(catAndMouse(84, 68, 76)); //	Mouse C
