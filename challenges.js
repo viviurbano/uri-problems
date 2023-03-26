@@ -660,9 +660,11 @@ const lines = input.split('\n');
 
 // Staircase
 // function staircase(n) {
-//   let spaces = '-';
+//   let spaces = ' ';
 //   let velha = '#';
-//   for (let i = n, x = 1; i >= 0; i--, x++) {
+//   let x = 0;
+//   for (let i = n - 1; i >= 0; i--) {
+//     x++;
 //     console.log(spaces.repeat(i) + velha.repeat(x));
 //   }
 // }
@@ -977,21 +979,81 @@ const lines = input.split('\n');
 
 // cats-and-a-mouse
 
-function catAndMouse(x, y, z) {
-  const maior = Math.max(x, y, z);
-  for (let i = 0; i <= maior; i++) {
-    if (x > z) {
-      x--;
-    } else x++;
+// function catAndMouse(x, y, z) {
+//   const maior = Math.max(x, y, z);
+//   for (let i = 0; i <= maior; i++) {
+//     if (x > z) {
+//       x--;
+//     } else x++;
 
-    if (y > z) {
-      y--;
-    } else y++;
+//     if (y > z) {
+//       y--;
+//     } else y++;
 
-    if (x === y) return 'Mouse C';
-    if (x === z) return 'Cat A';
-    if (y === z) return 'Cat B';
-  }
-}
+//     if (x === y) return 'Mouse C';
+//     if (x === z) return 'Cat A';
+//     if (y === z) return 'Cat B';
+//   }
+// }
 
-console.log(catAndMouse(84, 68, 76)); //	Mouse C
+// console.log(catAndMouse(84, 68, 76)); //	Mouse C
+
+// jogo da velha
+// ma[m][n] tem que ser quadrado = m = n
+// princ = 0
+// sec = 0
+// for (var i=0, j=m; i<m; i++, j--){
+//   princ += ma[i][i];
+//   sec += ma[j][i];
+// }
+// det = princ - sec;
+
+// picking-numbers
+
+// function pickingNumbers(a) {
+//   // for (let i = 0; i < a.length; i++) {
+//   //   if (
+//   //     Math.abs(a[i]) === Math.abs(a[i + 1]) ||
+//   //     Math.abs(a[i]) === Math.abs(a[i + 1] + 1) ||
+//   //     Math.abs(a[i]) === Math.abs(a[i + 1] - 1)
+//   //   ) {
+//   //     count++;
+//   //   }
+
+//   const result = a.reduce(
+//     (acc, curValue) => {
+//       acc[curValue]++;
+//       return acc;
+//     },
+//     { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0 }
+//   );
+//   console.log('result', result);
+// }
+
+// // console.log(pickingNumbers([5, 3, 3, 4, 10]));
+
+// function diagonalDifference(arr) {
+//   const arrLines = arr.length;
+//   let rightToLeft = 0;
+//   let leftToRight = 0;
+//   for (let i = 0; i < arrLines; i++) {
+//     for (let j = arrLines; j >= 0; j--) {
+//       // soma rightToLeft
+//       if (arrLines - 1 === j) {
+//         rightToLeft += arr[i][arrLines - 1 - i];
+//       }
+//       //soma leftToRight
+//       if (i == j) {
+//         leftToRight += arr[i][i];
+//       }
+//     }
+//   }
+//   let diagDiff = rightToLeft - leftToRight;
+//   return Math.abs(diagDiff);
+// }
+
+// diagonalDifference([
+//   [11, 2, 4],
+//   [4, 33, 6],
+//   [10, 8, 12],
+// ]);
